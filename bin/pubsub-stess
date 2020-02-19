@@ -1,0 +1,6 @@
+kubectl port-forward svc/example-nats 4222:4222 &
+PID=$!
+
+go run pubsub-stress/main.go
+
+kill $PID
